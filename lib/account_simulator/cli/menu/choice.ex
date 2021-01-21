@@ -1,6 +1,7 @@
 defmodule AccountSimulator.CLI.Menu.Choice do
   alias Mix.Shell.IO, as: Shell
   alias AccountSimulator.CLI.Menu.ItensLogin
+  alias AccountSimulator.Mix.CLI.Login.ChoiceLogin
 
   def start() do
     Shell.cmd("clear")
@@ -18,6 +19,7 @@ defmodule AccountSimulator.CLI.Menu.Choice do
     |> find_menu_itens_by_index.()
     |> confirm_menu_item()
     |> confirm_message()
+    |> ChoiceLogin.option_action()
   end
 
   defp dysplay_options(options) do
@@ -60,10 +62,9 @@ defmodule AccountSimulator.CLI.Menu.Choice do
     Shell.cmd("clear")
     Shell.info("Você escolheu... [#{chosen_menu_item.label}]")
 
-    if Shell.yes?("Confirma?") do
-      chosen_menu_item
-    else
-      start()
+    case Shell.yes?("Confirma a ação?") do
+      true -> chosen_menu_item
+      false -> start()
     end
   end
 end
