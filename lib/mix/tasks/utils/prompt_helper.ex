@@ -11,13 +11,4 @@ defmodule AccountSimulator.Mix.Tasks.Utils.PromptHelper do
     String.to_atom(msg)
   end
 
-  ##defp show_friend(friend) do
-  ##  friend
-  ##  |> Scribe.print(data: [{"Nome", :name}, {"email", :email}, {"Celular", :phone}], style: Scribe.Style.GithubMarkdown)
-  ##end
-
-  ##defp show_friends(list_friends) do
-  ##  list_friends
-  ##  |> Scribe.console(data: [{"Nome", :name}, {"email", :email}, {"Celular", :phone}], style: Scribe.Style.GithubMarkdown)
-  ##end
 end
