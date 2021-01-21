@@ -4,6 +4,6 @@ defmodule AccountSimulator.CLI.Menu.ItensLogin do
   def all,
     do: [
       %Menu{label: "Login", id: :login},
-      %Menu{label: "Criar um cadastro", id: :create},
+      %Menu{label: "Criar um cadastro", id: :create_user},
     ]
 end
