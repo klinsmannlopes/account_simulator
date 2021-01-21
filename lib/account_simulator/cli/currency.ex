@@ -1082,7 +1082,7 @@ defmodule AccountSimulator.CLI.Currency do
       BAM: 0, BBD: 0, BDT: 0, BGN: 0, BHD: 0, BIF: 0, BMD: 0, BND: 0, BOB: 0, BOV: 0,...
   
   """
-  def novo do
+  def new do
     [
       AED: 0, 
       AFN: 0,
