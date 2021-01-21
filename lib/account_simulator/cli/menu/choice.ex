@@ -34,7 +34,7 @@ defmodule AccountSimulator.CLI.Menu.Choice do
 
   defp generate_question(options) do
     options = Enum.join(1..Enum.count(options), ",")
-    "Qual das opções acima você escolher? [#{options}]\n"
+    "Qual das opções acima você escolhe? [#{options}]\n"
   end
 
   defp parse_answer(answer) do
