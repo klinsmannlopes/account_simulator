@@ -19,7 +19,7 @@ defmodule AccountSimulator.CLI.Menu.Choice do
     |> find_menu_itens_by_index.()
     |> confirm_menu_item()
     |> confirm_message()
-    |> ChoiceLogin.option_action()
+    |> ChoiceLogin.perfom_login()
   end
 
   defp dysplay_options(options) do
