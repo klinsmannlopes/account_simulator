@@ -5,7 +5,8 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
 
   def option_transactions(usuario, usuarios) do
     Shell.cmd("clear")
-    Shell.info("Escolha uma opcao:")
+    
+    Shell.info("Escolha uma opcao:\n")
 
     menu_itens = ItensTransations.all()
     find_menu_itens_by_index = &Enum.at(menu_itens, &1, :error)
@@ -19,7 +20,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     |> find_menu_itens_by_index.()
     |> confirm_menu_item(usuario, usuarios)
     |> confirm_message(usuario, usuarios)
-    |> ChoiceLogin.perfom_login(usuario, usuarios)
+    |> ChooseAction.perfom_transactions(usuario, usuarios)
   end
 
   defp dysplay_options(options) do
