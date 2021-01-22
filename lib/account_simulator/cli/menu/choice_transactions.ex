@@ -3,6 +3,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
   alias AccountSimulator.CLI.Menu.ItensTransations
   alias AccountSimulator.Mix.CLI.Menu.ChooseAction
 
+  #Apresenta menu da conta
   def option_transactions(usuario, usuarios) do
     Shell.cmd("clear")
     
