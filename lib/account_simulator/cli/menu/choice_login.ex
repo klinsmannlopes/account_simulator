@@ -7,7 +7,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceLogin do
     Shell.cmd("clear")
     Shell.info("Escolha uma opcao:")
 
-    menu_itens = ItensLogin.all()
+    menu_itens = ItemsLogin.all()
     find_menu_itens_by_index = &Enum.at(menu_itens, &1, :error)
 
     menu_itens
@@ -19,7 +19,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceLogin do
     |> find_menu_itens_by_index.()
     |> confirm_menu_item()
     |> confirm_message()
-    |> ChoiceLogin.perfom_login()
+    |> ChooseAction.perfom_login()
   end
 
   defp dysplay_options(options) do
