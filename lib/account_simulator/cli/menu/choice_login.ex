@@ -1,7 +1,7 @@
-defmodule AccountSimulator.CLI.Menu.Choice do
+defmodule AccountSimulator.CLI.Menu.ChoiceLogin do
   alias Mix.Shell.IO, as: Shell
-  alias AccountSimulator.CLI.Menu.ItensLogin
-  alias AccountSimulator.Mix.CLI.Login.ChoiceLogin
+  alias AccountSimulator.CLI.Menu.ItemsLogin
+  alias AccountSimulator.Mix.CLI.Menu.ChooseAction
 
   def start() do
     Shell.cmd("clear")

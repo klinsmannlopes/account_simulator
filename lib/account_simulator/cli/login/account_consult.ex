@@ -1,5 +1,6 @@
 defmodule AccountSimulator.CLI.Login.AccountConsult do
   alias Mix.Shell.IO, as: Shell
+
   @moduledoc """
   Realiza querys na estrutura de dados.
   """
@@ -14,14 +15,14 @@ defmodule AccountSimulator.CLI.Login.AccountConsult do
     - usuario: Atom que representa o nome do usuário.
 
   ## Exemplo 
-  
+
       iex> Consulta.get_balance(:klinsmann, usuarios)
       AED:0
       AFN:0
       ...
 
   """
-  
+
   def get_balance(usuario, usuarios) do
     Keyword.get(usuarios, usuario)
     |> Enum.map_join("\n", fn {k, v} -> "#{k}:#{v}" end)

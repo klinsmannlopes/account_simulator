@@ -10,5 +10,4 @@ defmodule AccountSimulator.Mix.Tasks.Utils.PromptHelper do
     msg = String.trim(msg)
     String.to_atom(msg)
   end
-
 end
