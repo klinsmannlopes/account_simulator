@@ -23,6 +23,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     |> ChooseAction.perfom_transactions(usuario, usuarios)
   end
 
+  #Mostra as opções no console
   defp dysplay_options(options) do
     options
     |> Enum.with_index(1)
@@ -33,6 +34,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     options
   end
 
+  #Analisar a resposta e retira -1 do indice
   defp generate_question(options) do
     options = Enum.join(1..Enum.count(options), ",")
     "Qual das opções acima você escolhe? [#{options}]\n"
