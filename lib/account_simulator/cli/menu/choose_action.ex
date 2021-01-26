@@ -6,6 +6,7 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
   alias AccountSimulator.Mix.Tasks.Utils.PromptHelper
   alias AccountSimulator.CLI.Menu.ChoiceTransactions
 
+  # Realiza a ação do menu de login.
   def perfom_login(chosen_menu_item) do
     case chosen_menu_item do
       %Menu{id: :login, label: _} -> login_user()
@@ -13,6 +14,7 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     end
   end
 
+  # Realiza a ação do menu de transações.
   def perfom_transactions(chosen_menu_item, usuario, usuarios) do
     case chosen_menu_item do
       %Menu{id: :balance, label: _} -> balance(usuario, usuarios)

@@ -1,22 +1,8 @@
+# Este módulo possui listas com informações sobre as moedas.
+
 defmodule AccountSimulator.CLI.Currency do
-  @moduledoc """
-  Este módulo possui listas com informações sobre as moedas.
-  A lista está em compliance com o ISO 4217.
-  Link https://pt.wikipedia.org/wiki/ISO_4217.
-  """
-
-  @doc """
-  Lista as informações das moedas.
-
-  ## Exemplo
-
-  iex> Moeda.moeda_info[:AMD].peso
-  2
-
-  iex> Moeda.moeda_info[:AMD].simbolo
-  $
-
-  """
+  
+  # Lista as informações das moedas, de acordo com o compliance ISO 4217.
   def info do
     [
       AED: %{

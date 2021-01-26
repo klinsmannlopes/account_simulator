@@ -3,7 +3,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
   alias AccountSimulator.CLI.Menu.ItensTransations
   alias AccountSimulator.Mix.CLI.Menu.ChooseAction
 
-  #Apresenta menu da conta
+  # Apresenta menu da conta.
   def option_transactions(usuario, usuarios) do
     Shell.cmd("clear")
     
@@ -24,7 +24,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     |> ChooseAction.perfom_transactions(usuario, usuarios)
   end
 
-  #Mostra as opções no console
+  # Mostra as opções no console.
   defp dysplay_options(options) do
     options
     |> Enum.with_index(1)
@@ -35,7 +35,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     options
   end
 
-  #Analisar a resposta e retira -1 do indice
+  # Analisar a resposta e retira -1 do indice.
   defp generate_question(options) do
     options = Enum.join(1..Enum.count(options), ",")
     "Qual das opções acima você escolhe? [#{options}]\n"
