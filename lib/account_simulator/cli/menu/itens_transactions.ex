@@ -1,7 +1,7 @@
 defmodule AccountSimulator.CLI.Menu.ItensTransations do
   alias AccountSimulator.CLI.Structs.Menu
 
-  # Estrutura do menu de transações da conta
+  # Estrutura do menu de transações da conta.
   def all,
     do: [
       %Menu{label: "Saldo", id: :balance},

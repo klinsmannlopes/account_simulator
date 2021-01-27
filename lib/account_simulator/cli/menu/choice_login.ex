@@ -3,7 +3,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceLogin do
   alias AccountSimulator.CLI.Menu.ItemsLogin
   alias AccountSimulator.Mix.CLI.Menu.ChooseAction
 
-  #Apresenta menu do login
+  # Apresenta menu do login.
   def start() do
     Shell.cmd("clear")
     Shell.info("Escolha uma opcao:")
@@ -23,7 +23,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceLogin do
     |> ChooseAction.perfom_login()
   end
 
-  #Mostra as opções no console
+  # Mostra as opções no console.
   defp dysplay_options(options) do
     options
     |> Enum.with_index(1)
@@ -39,7 +39,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceLogin do
     "\nQual das opções acima você escolhe? [#{options}]\n"
   end
 
-  #Analisar a resposta e retira -1 do indice
+  # Analisar a resposta e retira -1 do indice.
   defp parse_answer(answer) do
     case Integer.parse(answer) do
       :error -> invalid_option()

@@ -28,6 +28,7 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     Login.login()
   end
 
+  # Imprime no console o saldo do cliente em cada moeda que possui.
   defp balance(users, user) do
     Shell.cmd("clear")
     Shell.info("Esse e seu saldo nas seguintes moedas abaixo")
@@ -36,6 +37,7 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     ChoiceTransactions.option_transactions(users, user)
   end
 
+  # Deposita na conta do cliente em sua moeda específica.
   defp deposit_value(users, user) do
     AccountTransactions.value_deposit(user, users, AccountTransactions.currency(user, users) , AccountTransactions.value())
     |> ChoiceTransactions.option_transactions(user)

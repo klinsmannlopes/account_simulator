@@ -41,6 +41,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     "Qual das opções acima você escolhe? [#{options}]\n"
   end
 
+  # Faz o parse para inteiro.
   defp parse_answer(answer, usuario, usuarios) do
     case Integer.parse(answer) do
       :error -> invalid_option(usuario, usuarios)
