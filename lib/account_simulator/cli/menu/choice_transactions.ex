@@ -4,7 +4,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
   alias AccountSimulator.Mix.CLI.Menu.ChooseAction
 
   # Apresenta menu da conta.
-  def option_transactions(usuario, usuarios) do
+  def option_transactions(usuarios, usuario) do
     Shell.cmd("clear")
     
     Shell.info("Escolha uma opcao:\n")
@@ -52,7 +52,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     Shell.cmd("clear")
     Shell.error("Opção Inválida!")
     Shell.prompt("Pressione Enter para tentar novamente.")
-    option_transactions(usuario, usuarios)
+    option_transactions(usuarios, usuario)
   end
 
   defp confirm_menu_item(chosen_menu_item, usuario, usuarios) do
@@ -66,9 +66,11 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     Shell.cmd("clear")
     Shell.info("Você escolheu... [#{chosen_menu_item.label}]")
 
-    case Shell.yes?("Confirma a ação?") do
-      true -> chosen_menu_item
-      false -> option_transactions(usuario, usuarios)
-    end
+    chosen_menu_item
+
+    #case Shell.yes?("Confirma a ação?") do
+    #  true -> chosen_menu_item
+    #  false -> option_transactions(usuarios, usuario)
+    #end
   end
 end

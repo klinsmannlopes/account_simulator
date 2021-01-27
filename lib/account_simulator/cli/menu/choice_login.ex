@@ -65,9 +65,6 @@ defmodule AccountSimulator.CLI.Menu.ChoiceLogin do
     Shell.cmd("clear")
     Shell.info("Você escolheu... [#{chosen_menu_item.label}]")
 
-    case Shell.yes?("Confirma a ação?") do
-      true -> chosen_menu_item
-      false -> start()
-    end
+    chosen_menu_item
   end
 end
