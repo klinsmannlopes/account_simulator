@@ -15,10 +15,10 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
   end
 
   # Realiza a ação do menu de transações.
-  def perfom_transactions(chosen_menu_item, usuario, usuarios) do
+  def perfom_transactions(chosen_menu_item, user, users) do
     case chosen_menu_item do
-      %Menu{id: :balance, label: _} -> balance(usuario, usuarios)
-      %Menu{id: :deposit, label: _} -> Shell.info("Depósito...")
+      %Menu{id: :balance, label: _} -> balance(users, user)
+      %Menu{id: :deposit, label: _} -> deposit_value(users, user)
       %Menu{id: :transfer, label: _} -> Shell.info("Tranferência...")
       %Menu{id: :exchange, label: _} -> Shell.info("Câmbio de moedas...")
     end
@@ -28,11 +28,16 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     Login.login()
   end
 
-  defp balance(usuario, usuarios) do
+  defp balance(users, user) do
     Shell.cmd("clear")
     Shell.info("Esse e seu saldo nas seguintes moedas abaixo")
-    AccountTransactions.get_balance(usuario, usuarios)
+    AccountTransactions.get_balance(user, users)
     PromptHelper.prompt_message("Pressione ENTER para voltar ao menu da conta...")
-    ChoiceTransactions.option_transactions(usuario, usuarios)
+    ChoiceTransactions.option_transactions(users, user)
+  end
+
+  defp deposit_value(users, user) do
+    AccountTransactions.value_deposit(user, users, AccountTransactions.currency(user, users) , AccountTransactions.value())
+    |> ChoiceTransactions.option_transactions(user)
   end
 end
