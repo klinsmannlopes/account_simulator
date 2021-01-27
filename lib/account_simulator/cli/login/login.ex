@@ -25,7 +25,7 @@ defmodule AccountSimulator.CLI.Login.Login do
         AccountSimulator.CLI.Menu.ChoiceLogin.start()
 
       _ ->
-        ChoiceTransactions.option_transactions(usuario, usuarios)
+        ChoiceTransactions.option_transactions(usuarios, usuario)
     end
   end
 
