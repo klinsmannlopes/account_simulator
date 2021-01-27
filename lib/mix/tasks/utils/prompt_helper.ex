@@ -12,4 +12,10 @@ defmodule AccountSimulator.Mix.Tasks.Utils.PromptHelper do
     msg = String.trim(msg)
     String.to_atom(msg)
   end
+
+  def string_atom_upcase(currency) do
+    currency
+    |> String.upcase()
+    |> string_atom()
+  end
 end
