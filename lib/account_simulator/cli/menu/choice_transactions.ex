@@ -20,7 +20,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     |> parse_answer(usuario, usuarios)
     |> find_menu_itens_by_index.()
     |> confirm_menu_item(usuario, usuarios)
-    |> confirm_message(usuario, usuarios)
+    |> confirm_message()
     |> ChooseAction.perfom_transactions(usuario, usuarios)
   end
 
@@ -63,7 +63,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     end
   end
 
-  defp confirm_message(chosen_menu_item, usuario, usuarios) do
+  defp confirm_message(chosen_menu_item) do
     Shell.cmd("clear")
     Shell.info("Você escolheu... [#{chosen_menu_item.label}]")
 
