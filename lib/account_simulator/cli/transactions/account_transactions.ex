@@ -1,12 +1,8 @@
 defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   alias Mix.Shell.IO, as: Shell
   alias AccountSimulator.Mix.Tasks.Utils.PromptHelper
-  alias AccountSimulator.CLI.Login.Login
 
-
-  @moduledoc """
-  Modulo para realizar transações entre contas.
-  """
+  # Modulo para realizar transações entre contas.
 
   def get_balance(usuario, usuarios) do
     Keyword.get(usuarios, usuario)
