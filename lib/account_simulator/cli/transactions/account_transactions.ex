@@ -4,16 +4,19 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
 
   # Modulo para realizar transações entre contas.
 
+  # Devolve o saldo de todas as moedas da conta.
   def get_balance(usuario, usuarios) do
     Keyword.get(usuarios, usuario)
     |> Enum.map_join("\n", fn {k, v} -> "#{k}:#{v}" end)
     |> Shell.info()
   end
 
+  # Devolve o saldo de acordo com a moeda.
   def currency_balance(users, user, currency) do
     Keyword.get(users[user], currency)
   end
 
+  # Faz toda ação para realizar o depósito.
   def value_deposit(user, users, currency, value) do
     Shell.cmd("clear")
     
@@ -25,6 +28,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     new_data_users
   end
 
+  # Pegar o valor do depósito.
   def value  do
     PromptHelper.prompt_message("Qual quantia gostaria de depositar?: ")
     |> value_integer()
