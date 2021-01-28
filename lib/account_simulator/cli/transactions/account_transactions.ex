@@ -34,6 +34,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     |> value_integer()
   end
 
+  # Transformar em inteiro.
   defp value_integer(value) do
     case Regex.run(~r/^(0*[1-9][0-9]*)$/, value) do
       nil ->
@@ -44,6 +45,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     end
   end
 
+  # Pegar a moeda digitada pela usuário.
   def currency(user, users) do
     Shell.cmd("clear")
     PromptHelper.prompt_message("Qual seria a moeda?: ")
@@ -51,6 +53,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     |> check_currency(user, users)
   end
 
+  # Checar a moeda.
   def check_currency(currency, user, users) do
     case Keyword.get(users[user], currency) do
       nil ->
