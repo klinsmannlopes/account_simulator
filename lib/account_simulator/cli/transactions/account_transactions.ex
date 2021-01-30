@@ -1,6 +1,8 @@
 defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   alias Mix.Shell.IO, as: Shell
   alias AccountSimulator.Mix.Tasks.Utils.PromptHelper
+  alias AccountSimulator.CLI.Menu.ChoiceTransactions
+  alias AccountSimulator.CLI.Login.AccountConsult
 
   # Modulo para realizar transações entre contas.
 
@@ -63,5 +65,59 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
       _ ->
         currency
     end
+  end
+
+  # 
+  def transfer(users, user) do
+    Shell.cmd("clear")
+    verify_account(users, user)
+    moeda = cedula(usuarios, usuario)
+  end
+
+  # Verifica a conta que vai receber a transferência.
+  def verify_account(users, user) do
+    if verify_money?(users, user) == :error do
+      ChoiceTransactions.option_transactions(users, user)
+    end
+
+    PromptHelper.prompt_message("Qual conta desejaria realizar a transferência?")
+    |> PromptHelper.string_atom()
+    |> compare_account(user, users)
+  end
+
+  defp compare_account(account_user, user, users) do
+    if account_user == user do
+      Shell.info("Você não pode realizar transferência para sua conta.")
+      Shell.prompt("Pressione Enter para tentar novamente.")
+      transfer(users, user)
+    end
+    account_exists(account_user, user, users)
+  end
+
+  # Passar conta loga e conta digitada
+  defp account_exists(account_user, user, users) do
+    case AccountConsult.get_user?(user,users) do
+        :error ->
+          Shell.cmd("clear")
+          Shell.error("Essa conta não existe!")
+          Shell.prompt("Pressione Enter para tentar novamente.")
+          transfer(users, user)
+        _ ->
+          account_user
+       end
+  end
+
+  # Verifica se o usuário possui algum dinheiro em sua conta.
+  def verify_money?(users, user) do
+    
+    PromptHelper.som_total_values(Keyword.values(users[user]))
+    |> case do
+         :error ->
+           Shell.info("Você não possui dinheiro, faça um deposito antes de continuar")
+           Shell.prompt("Pressione Enter para voltar ao menu de transações.")
+           ChoiceTransactions.option_transactions(users, user)
+         nil ->
+           true
+       end
   end
 end

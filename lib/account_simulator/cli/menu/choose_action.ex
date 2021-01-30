@@ -18,8 +18,8 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
   def perfom_transactions(chosen_menu_item, user, users) do
     case chosen_menu_item do
       %Menu{id: :balance, label: _} -> balance(users, user)
-      %Menu{id: :deposit, label: _} -> deposit_value(users, user)
-      %Menu{id: :transfer, label: _} -> Shell.info("Tranferência...")
+      %Menu{id: :deposit, label: _} -> deposit(users, user)
+      %Menu{id: :transfer, label: _} -> transfer(users, user)
       %Menu{id: :exchange, label: _} -> Shell.info("Câmbio de moedas...")
     end
   end
@@ -38,8 +38,12 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
   end
 
   # Deposita na conta do cliente em sua moeda específica.
-  defp deposit_value(users, user) do
+  defp deposit(users, user) do
     AccountTransactions.value_deposit(user, users, AccountTransactions.currency(user, users) , AccountTransactions.value())
     |> ChoiceTransactions.option_transactions(user)
+  end
+
+  defp transfer(users, user) do
+    AccountTransactions.transfer(users, user)
   end
 end
