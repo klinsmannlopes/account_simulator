@@ -18,4 +18,10 @@ defmodule AccountSimulator.Mix.Tasks.Utils.PromptHelper do
     |> String.upcase()
     |> string_atom()
   end
+
+  def som_total_values(total) do
+    if Enum.sum(total) <= 0 do
+      :error
+    end
+  end
 end
