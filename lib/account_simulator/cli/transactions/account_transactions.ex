@@ -71,7 +71,17 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   def transfer(users, user) do
     Shell.cmd("clear")
     verify_account(users, user)
-    moeda = cedula(usuarios, usuario)
+    currency_client = currency(user, users)
+    check_balance_currency(currency_client, users, user)
+  end
+
+  # Verifica na conta se na moeda passada possui salso.
+  def check_balance_currency(currency, users, user) do
+    if currency_balance(users, user, currency) <= 0 do
+      Shell.info("Você não possui quantia com essa moeda, realize um depósito em sua conta.")
+      Shell.prompt("Pressione Enter para voltar ao menu de transações.")
+      ChoiceTransactions.option_transactions(users, user)
+    end
   end
 
   # Verifica a conta que vai receber a transferência.
