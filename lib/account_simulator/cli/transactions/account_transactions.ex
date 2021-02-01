@@ -85,15 +85,17 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   # Fluxo da transferência.
   def transfer(users, user) do
     Shell.cmd("clear")
-    verify_account(users, user)
-    check_balance_currency(currency(user, users), users, user)
-    value_tranfer()
-    |> IO.puts()
+    referred_account = verify_account(users, user)
+    currency = currency(user, users)
+    check_balance_currency(currency, users, user)
+    new_data_users = perform_transfer(value_tranfer(), users, user, currency, referred_account)
+    Shell.prompt("Pressione Enter para voltar ao menu de transações.")
+    new_data_users
   end
 
   # Realiza transferência.
-  def perform_transfer(users, user, currency, value, referred_account) do
-    check_value(users, user, currency, value)
+  def perform_transfer(value, users, user, currency, referred_account) do
+    check_value(currency, users, user, value)
     users = AccountExchange.remove_currency(users, user, currency, value)
     [value, users] =
       if referred_account != :lopes do
@@ -105,12 +107,12 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     AccountExchange.add_currency(users, referred_account, currency, value)
   end
 
-  # Faz o rateio da transação
+  # Faz o rateio da transação.
   def apportionment(users, currency, value) do
     rate = 5
     split = round(value / rate)
     users = put_in (users[:lopes])[currency], (users[:lopes])[currency] + split
-    IO.write "Taxa de rateio para o banco lopes e de #{rate}% para stone."
+    Shell.info("Taxa de rateio para o banco lopes e de #{rate}%")
     [value - split, users]
   end
 
@@ -125,8 +127,8 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
 
   # Verifica na conta se na moeda passada possui saldo.
   def check_value(currency, users, user, value) do
-    if currency_balance(users, user, currency) < 0 do
-      Shell.info("Você não possui quantia essa moeda, realize um depósito em sua conta.")
+    if currency_balance(users, user, currency) < value do
+      Shell.info("Você não possui essa quantia nessa moeda, realize um depósito em sua conta.")
       Shell.prompt("Pressione Enter para voltar ao menu de transações.")
       ChoiceTransactions.option_transactions(users, user)
     end
