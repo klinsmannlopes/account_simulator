@@ -45,5 +45,6 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
 
   defp transfer(users, user) do
     AccountTransactions.transfer(users, user)
+    |> ChoiceTransactions.option_transactions(user)
   end
 end
