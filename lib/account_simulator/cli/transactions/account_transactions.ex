@@ -82,7 +82,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     end
   end
 
-  # 
+  # Fluxo da transferência.
   def transfer(users, user) do
     Shell.cmd("clear")
     verify_account(users, user)
@@ -91,18 +91,27 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     |> IO.puts()
   end
 
-  # Realiza transferência
-  def realiza_transferencia(users, user, currency, value, referred_account) do
+  # Realiza transferência.
+  def perform_transfer(users, user, currency, value, referred_account) do
     check_value(users, user, currency, value)
     users = AccountExchange.remove_currency(users, user, currency, value)
     [value, users] =
       if referred_account != :lopes do
-        #rateio
+        apportionment(users, currency, value)
       else
         [value, users]
       end
     Shell.info("Transferência de valor R$ #{value} #{currency} para a conta #{referred_account}, realizada com sucesso")
     AccountExchange.add_currency(users, referred_account, currency, value)
+  end
+
+  # Faz o rateio da transação
+  def apportionment(users, currency, value) do
+    rate = 5
+    split = round(value / rate)
+    users = put_in (users[:lopes])[currency], (users[:lopes])[currency] + split
+    IO.write "Taxa de rateio para o banco lopes e de #{rate}% para stone."
+    [value - split, users]
   end
 
   # Verifica na conta se na moeda passada possui saldo.
