@@ -3,6 +3,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   alias AccountSimulator.Mix.Tasks.Utils.PromptHelper
   alias AccountSimulator.CLI.Menu.ChoiceTransactions
   alias AccountSimulator.CLI.Login.AccountConsult
+  alias AccountSimulator.Mix.CLI.Trasactions.AccountExchange
 
   # Modulo para realizar transações entre contas.
 
@@ -18,6 +19,14 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     Keyword.get(users[user], currency)
   end
 
+  # Devolve o saldo de acordo com a moeda.
+  def amount(value) do
+    unless value > 0 do
+      PromptHelper.prompt_message("Dinheiro insuficiente. TESTE")
+      System.stop(0)
+    end
+  end
+
   # Faz toda ação para realizar o depósito.
   def value_deposit(user, users, currency, value) do
     Shell.cmd("clear")
@@ -30,9 +39,15 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     new_data_users
   end
 
-  # Pegar o valor do depósito.
-  def value  do
+  # Pegar o valor do Transferência.
+  def value do
     PromptHelper.prompt_message("Qual quantia gostaria de depositar?: ")
+    |> value_integer()
+  end
+
+  # Pegar o valor para transferência.
+  def value_tranfer do
+    PromptHelper.prompt_message("Quanto gostaria de transferir?: ")
     |> value_integer()
   end
 
@@ -71,17 +86,42 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   def transfer(users, user) do
     Shell.cmd("clear")
     verify_account(users, user)
-    currency_client = currency(user, users)
-    check_balance_currency(currency_client, users, user)
+    check_balance_currency(currency(user, users), users, user)
+    value_tranfer()
+    |> IO.puts()
   end
 
-  # Verifica na conta se na moeda passada possui salso.
+  # Realiza transferência
+  def realiza_transferencia(users, user, currency, value, referred_account) do
+    check_value(users, user, currency, value)
+    users = AccountExchange.remove_currency(users, user, currency, value)
+    [value, users] =
+      if referred_account != :lopes do
+        #rateio
+      else
+        [value, users]
+      end
+    Shell.info("Transferência de valor R$ #{value} #{currency} para a conta #{referred_account}, realizada com sucesso")
+    AccountExchange.add_currency(users, referred_account, currency, value)
+  end
+
+  # Verifica na conta se na moeda passada possui saldo.
   def check_balance_currency(currency, users, user) do
     if currency_balance(users, user, currency) <= 0 do
       Shell.info("Você não possui quantia com essa moeda, realize um depósito em sua conta.")
       Shell.prompt("Pressione Enter para voltar ao menu de transações.")
       ChoiceTransactions.option_transactions(users, user)
     end
+  end
+
+  # Verifica na conta se na moeda passada possui saldo.
+  def check_value(currency, users, user, value) do
+    if currency_balance(users, user, currency) < 0 do
+      Shell.info("Você não possui quantia essa moeda, realize um depósito em sua conta.")
+      Shell.prompt("Pressione Enter para voltar ao menu de transações.")
+      ChoiceTransactions.option_transactions(users, user)
+    end
+    value
   end
 
   # Verifica a conta que vai receber a transferência.
@@ -104,9 +144,9 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     account_exists(account_user, user, users)
   end
 
-  # Passar conta loga e conta digitada
+  # Verifica se conta passada pelo usuário existe na estrutura.
   defp account_exists(account_user, user, users) do
-    case AccountConsult.get_user?(user,users) do
+    case AccountConsult.get_user?(account_user,users) do
         :error ->
           Shell.cmd("clear")
           Shell.error("Essa conta não existe!")
