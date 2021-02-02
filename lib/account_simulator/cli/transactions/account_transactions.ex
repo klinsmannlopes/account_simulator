@@ -19,14 +19,6 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     Keyword.get(users[user], currency)
   end
 
-  # Devolve o saldo de acordo com a moeda.
-  def amount(value) do
-    unless value > 0 do
-      PromptHelper.prompt_message("Dinheiro insuficiente. TESTE")
-      System.stop(0)
-    end
-  end
-
   # Faz toda ação para realizar o depósito.
   def value_deposit(user, users, currency, value) do
     Shell.cmd("clear")
