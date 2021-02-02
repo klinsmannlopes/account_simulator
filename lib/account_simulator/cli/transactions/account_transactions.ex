@@ -43,6 +43,12 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     |> value_integer()
   end
 
+  # Pegar o valor para câmbio.
+  def value_exchange do
+    PromptHelper.prompt_message("Qual valor para realização do câmbio?: ")
+    |> value_integer()
+  end
+
   # Transformar em inteiro.
   defp value_integer(value) do
     case Regex.run(~r/^(0*[1-9][0-9]*)$/, value) do
@@ -57,6 +63,13 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   # Pegar a moeda digitada pela usuário.
   def currency(user, users) do
     Shell.cmd("clear")
+    PromptHelper.prompt_message("Qual seria a moeda?: ")
+    |> PromptHelper.string_atom_upcase()
+    |> check_currency(user, users)
+  end
+
+  # Pegar a moeda digitada pela usuário quando for a ação de realizar câmbio.
+  def currency_exchange(user, users) do
     PromptHelper.prompt_message("Qual seria a moeda?: ")
     |> PromptHelper.string_atom_upcase()
     |> check_currency(user, users)
