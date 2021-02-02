@@ -31,6 +31,6 @@ defmodule AccountSimulator.CLI.Login.Login do
 
   # Estrutura de dados default.
   def standard_user do
-    [maria: Currency.new(), stone: Currency.new(), klinsmann: Currency.new()]
+    [francisca: Currency.new(), stone: Currency.new(), klinsmann: Currency.new(), lopes: Currency.new(), paula: Currency.new()]
   end
 end
