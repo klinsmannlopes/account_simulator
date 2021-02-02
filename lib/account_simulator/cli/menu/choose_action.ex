@@ -6,12 +6,13 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
   alias AccountSimulator.Mix.Tasks.Utils.PromptHelper
   alias AccountSimulator.CLI.Menu.ChoiceTransactions
   alias AccountSimulator.Mix.CLI.Trasactions.AccountExchange
+  alias AccountSimulator.CLI.Login.Account
 
   # Realiza a ação do menu de login.
   def perfom_login(chosen_menu_item) do
     case chosen_menu_item do
       %Menu{id: :login, label: _} -> login_user()
-      %Menu{id: :create_user, label: _} -> Shell.info("Cadastrar...")
+      %Menu{id: :create_user, label: _} -> create_user()
     end
   end
 
@@ -27,6 +28,10 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
 
   defp login_user do
     Login.login()
+  end
+
+  defp create_user() do
+    Account.create()
   end
 
   # Imprime no console o saldo do cliente em cada moeda que possui.
