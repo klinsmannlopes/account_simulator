@@ -52,4 +52,9 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountExchange do
       :error
     end
   end
+
+  # Obtem o peso da moeda
+  def get_weight(currency) do
+    Moeda.info()[currency].weight
+  end
 end
