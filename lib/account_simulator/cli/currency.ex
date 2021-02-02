@@ -1092,7 +1092,7 @@ defmodule AccountSimulator.CLI.Currency do
       BND: 0,
       BOB: 0,
       BOV: 0,
-      BRL: 10,
+      BRL: 0,
       BSD: 0,
       BTN: 0,
       BWP: 0,
