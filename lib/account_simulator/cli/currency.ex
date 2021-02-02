@@ -6,1054 +6,1054 @@ defmodule AccountSimulator.CLI.Currency do
   def info do
     [
       AED: %{
-        nome: "UAE Dirham",                                             
-        simbolo: "د.إ", 
-        peso: 2, 
-        expoente: 2
+        name: "UAE Dirham",                                             
+        symbol: "د.إ", 
+        weight: 2, 
+        exponent: 2
       },
       AFN: %{
-        nome: "Afghani",
-        simbolo: "؋",
-        peso: 1,
-        expoente: 2
+        name: "Afghani",
+        symbol: "؋",
+        weight: 1,
+        exponent: 2
       },
       ALL: %{
-        nome: "Lek",
-        simbolo: "Lek",
-        peso: 1,
-        expoente: 2
+        name: "Lek",
+        symbol: "Lek",
+        weight: 1,
+        exponent: 2
       },
       AMD: %{
-        nome: "Armenian Dram",
-        simbolo: "AMD",
-        peso: 1,
-        expoente: 2
+        name: "Armenian Dram",
+        symbol: "AMD",
+        weight: 1,
+        exponent: 2
       },
       ANG: %{
-        nome: "Netherlands Antillian Guilder",
-        simbolo: "ƒ",
-        peso: 1,
-        expoente: 2
+        name: "Netherlands Antillian Guilder",
+        symbol: "ƒ",
+        weight: 1,
+        exponent: 2
       },
       AOA: %{
-        nome: "Kwanza",
-        simbolo: "Kz",
-        peso: 1,
-        expoente: 2
+        name: "Kwanza",
+        symbol: "Kz",
+        weight: 1,
+        exponent: 2
       },
       ARS: %{
-        nome: "Argentine Peso",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Argentine weight",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       AUD: %{
-        nome: "Australian Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Australian Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       AWG: %{
-        nome: "Aruban Guilder",
-        simbolo: "ƒ",
-        peso: 1,
-        expoente: 2
+        name: "Aruban Guilder",
+        symbol: "ƒ",
+        weight: 1,
+        exponent: 2
       },
       AZN: %{
-        nome: "Azerbaijanian Manat",
-        simbolo: "ман",
-        peso: 1,
-        expoente: 2
+        name: "Azerbaijanian Manat",
+        symbol: "ман",
+        weight: 1,
+        exponent: 2
       },
       BAM: %{
-        nome: "Convertible Marks",
-        simbolo: "KM",
-        peso: 1,
-        expoente: 2
+        name: "Convertible Marks",
+        symbol: "KM",
+        weight: 1,
+        exponent: 2
       },
       BBD: %{
-        nome: "Barbados Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Barbados Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       BDT: %{
-        nome: "Taka",
-        simbolo: "৳",
-        peso: 1,
-        expoente: 2
+        name: "Taka",
+        symbol: "৳",
+        weight: 1,
+        exponent: 2
       },
       BGN: %{
-        nome: "Bulgarian Lev",
-        simbolo: "лв",
-        peso: 1,
-        expoente: 2
+        name: "Bulgarian Lev",
+        symbol: "лв",
+        weight: 1,
+        exponent: 2
       },
       BHD: %{
-        nome: "Bahraini Dinar",
-        simbolo: ".د.ب",
-        peso: 1,
-        expoente: 3
+        name: "Bahraini Dinar",
+        symbol: ".د.ب",
+        weight: 1,
+        exponent: 3
       },
       BIF: %{
-        nome: "Burundi Franc",
-        simbolo: "FBu",
-        peso: 1,
-        expoente: 0
+        name: "Burundi Franc",
+        symbol: "FBu",
+        weight: 1,
+        exponent: 0
       },
       BMD: %{
-        nome: "Bermudian Dollar (customarily known as Bermuda Dollar)",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Bermudian Dollar (customarily known as Bermuda Dollar)",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       BND: %{
-        nome: "Brunei Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Brunei Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       BOB: %{
-        nome: "Boliviano Mvdol",
-        simbolo: "$b",
-        peso: 1,
-        expoente: 2
+        name: "Boliviano Mvdol",
+        symbol: "$b",
+        weight: 1,
+        exponent: 2
       },
       BOV: %{
-        nome: "Boliviano Mvdol",
-        simbolo: "$b",
-        peso: 1,
-        expoente: 2
+        name: "Boliviano Mvdol",
+        symbol: "$b",
+        weight: 1,
+        exponent: 2
       },
       BRL: %{
-        nome: "Brazilian Real",
-        simbolo: "R$",
-        peso: 5,
-        expoente: 2
+        name: "Brazilian Real",
+        symbol: "R$",
+        weight: 5,
+        exponent: 2
       },
       BSD: %{
-        nome: "Bahamian Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Bahamian Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       BTN: %{
-        nome: "Indian Rupee Ngultrum",
-        simbolo: "Nu.",
-        peso: 1,
-        expoente: 2
+        name: "Indian Rupee Ngultrum",
+        symbol: "Nu.",
+        weight: 1,
+        exponent: 2
       },
       BWP: %{
-        nome: "Pula",
-        simbolo: "P",
-        peso: 1,
-        expoente: 2
+        name: "Pula",
+        symbol: "P",
+        weight: 1,
+        exponent: 2
       },
       BYR: %{
-        nome: "Belarussian Ruble",
-        simbolo: "p.",
-        peso: 1,
-        expoente: 0
+        name: "Belarussian Ruble",
+        symbol: "p.",
+        weight: 1,
+        exponent: 0
       },
       BZD: %{
-        nome: "Belize Dollar",
-        simbolo: "BZ$",
-        peso: 1,
-        expoente: 2
+        name: "Belize Dollar",
+        symbol: "BZ$",
+        weight: 1,
+        exponent: 2
       },
       CAD: %{
-        nome: "Canadian Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Canadian Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       CDF: %{
-        nome: "Congolese Franc",
-        simbolo: "CF",
-        peso: 1,
-        expoente: 2
+        name: "Congolese Franc",
+        symbol: "CF",
+        weight: 1,
+        exponent: 2
       },
       CHF: %{
-        nome: "Swiss Franc",
-        simbolo: "CHF",
-        peso: 1,
-        expoente: 2
+        name: "Swiss Franc",
+        symbol: "CHF",
+        weight: 1,
+        exponent: 2
       },
       CLF: %{
-        nome: "Chilean Peso Unidades de fomento",
-        simbolo: "$",
-        peso: 1,
-        expoente: 4
+        name: "Chilean weight Unidades de fomento",
+        symbol: "$",
+        weight: 1,
+        exponent: 4
       },
       CLP: %{
-        nome: "Chilean Peso Unidades de fomento",
-        simbolo: "$",
-        peso: 1,
-        expoente: 0
+        name: "Chilean weight Unidades de fomento",
+        symbol: "$",
+        weight: 1,
+        exponent: 0
       },
       CNY: %{
-        nome: "Yuan Renminbi",
-        simbolo: "¥",
-        peso: 1,
-        expoente: 2
+        name: "Yuan Renminbi",
+        symbol: "¥",
+        weight: 1,
+        exponent: 2
       },
       COP: %{
-        nome: "Colombian Peso",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Colombian weight",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       COU: %{
-        nome: "Colombian Peso Unidad de Valor Real",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Colombian weight Unidad de Valor Real",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       CRC: %{
-        nome: "Costa Rican Colon",
-        simbolo: "₡",
-        peso: 1,
-        expoente: 2
+        name: "Costa Rican Colon",
+        symbol: "₡",
+        weight: 1,
+        exponent: 2
       },
       CUC: %{
-        nome: "Cuban Peso Peso Convertible",
-        simbolo: "₱",
-        peso: 1,
-        expoente: 2
+        name: "Cuban weight weight Convertible",
+        symbol: "₱",
+        weight: 1,
+        exponent: 2
       },
       CUP: %{
-        nome: "Cuban Peso Peso Convertible",
-        simbolo: "₱",
-        peso: 1,
-        expoente: 2
+        name: "Cuban weight weight Convertible",
+        symbol: "₱",
+        weight: 1,
+        exponent: 2
       },
       CVE: %{
-        nome: "Cape Verde Escudo",
-        simbolo: "$",
-        peso: 1,
-        expoente: 0
+        name: "Cape Verde Escudo",
+        symbol: "$",
+        weight: 1,
+        exponent: 0
       },
       CZK: %{
-        nome: "Czech Koruna",
-        simbolo: "Kč",
-        peso: 1,
-        expoente: 2
+        name: "Czech Koruna",
+        symbol: "Kč",
+        weight: 1,
+        exponent: 2
       },
       DJF: %{
-        nome: "Djibouti Franc",
-        simbolo: "Fdj",
-        peso: 1,
-        expoente: 0
+        name: "Djibouti Franc",
+        symbol: "Fdj",
+        weight: 1,
+        exponent: 0
       },
       DKK: %{
-        nome: "Danish Krone",
-        simbolo: "kr",
-        peso: 1,
-        expoente: 2
+        name: "Danish Krone",
+        symbol: "kr",
+        weight: 1,
+        exponent: 2
       },
       DOP: %{
-        nome: "Dominican Peso",
-        simbolo: "RD$",
-        peso: 1,
-        expoente: 2
+        name: "Dominican weight",
+        symbol: "RD$",
+        weight: 1,
+        exponent: 2
       },
       DZD: %{
-        nome: "Algerian Dinar",
-        simbolo: "دج",
-        peso: 1,
-        expoente: 2
+        name: "Algerian Dinar",
+        symbol: "دج",
+        weight: 1,
+        exponent: 2
       },
       EEK: %{
-        nome: "Kroon",
-        simbolo: "KR",
-        peso: 1,
-        expoente: 2
+        name: "Kroon",
+        symbol: "KR",
+        weight: 1,
+        exponent: 2
       },
       EGP: %{
-        nome: "Egyptian Pound",
-        simbolo: "£",
-        peso: 1,
-        expoente: 2
+        name: "Egyptian Pound",
+        symbol: "£",
+        weight: 1,
+        exponent: 2
       },
       ERN: %{
-        nome: "Nakfa",
-        simbolo: "Nfk",
-        peso: 1,
-        expoente: 2
+        name: "Nakfa",
+        symbol: "Nfk",
+        weight: 1,
+        exponent: 2
       },
       ETB: %{
-        nome: "Ethiopian Birr",
-        simbolo: "Br",
-        peso: 1,
-        expoente: 2
+        name: "Ethiopian Birr",
+        symbol: "Br",
+        weight: 1,
+        exponent: 2
       },
       EUR: %{
-        nome: "Euro",
-        simbolo: "€",
-        peso: 1,
-        expoente: 2
+        name: "Euro",
+        symbol: "€",
+        weight: 1,
+        exponent: 2
       },
       FJD: %{
-        nome: "Fiji Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Fiji Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       FKP: %{
-        nome: "Falkland Islands Pound",
-        simbolo: "£",
-        peso: 1,
-        expoente: 2
+        name: "Falkland Islands Pound",
+        symbol: "£",
+        weight: 1,
+        exponent: 2
       },
       GBP: %{
-        nome: "Pound Sterling",
-        simbolo: "£",
-        peso: 1,
-        expoente: 2
+        name: "Pound Sterling",
+        symbol: "£",
+        weight: 1,
+        exponent: 2
       },
       GEL: %{
-        nome: "Lari",
-        simbolo: "₾",
-        peso: 1,
-        expoente: 2
+        name: "Lari",
+        symbol: "₾",
+        weight: 1,
+        exponent: 2
       },
       GHS: %{
-        nome: "Cedi",
-        simbolo: "GH₵",
-        peso: 1,
-        expoente: 2
+        name: "Cedi",
+        symbol: "GH₵",
+        weight: 1,
+        exponent: 2
       },
       GIP: %{
-        nome: "Gibraltar Pound",
-        simbolo: "£",
-        peso: 1,
-        expoente: 2
+        name: "Gibraltar Pound",
+        symbol: "£",
+        weight: 1,
+        exponent: 2
       },
       GMD: %{
-        nome: "Dalasi",
-        simbolo: "D",
-        peso: 1,
-        expoente: 2
+        name: "Dalasi",
+        symbol: "D",
+        weight: 1,
+        exponent: 2
       },
       GNF: %{
-        nome: "Guinea Franc",
-        simbolo: "FG",
-        peso: 1,
-        expoente: 0
+        name: "Guinea Franc",
+        symbol: "FG",
+        weight: 1,
+        exponent: 0
       },
       GTQ: %{
-        nome: "Quetzal",
-        simbolo: "Q",
-        peso: 1,
-        expoente: 2
+        name: "Quetzal",
+        symbol: "Q",
+        weight: 1,
+        exponent: 2
       },
       GYD: %{
-        nome: "Guyana Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Guyana Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       HKD: %{
-        nome: "Hong Kong Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Hong Kong Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       HNL: %{
-        nome: "Lempira",
-        simbolo: "L",
-        peso: 1,
-        expoente: 2
+        name: "Lempira",
+        symbol: "L",
+        weight: 1,
+        exponent: 2
       },
       HRK: %{
-        nome: "Croatian Kuna",
-        simbolo: "kn",
-        peso: 1,
-        expoente: 2
+        name: "Croatian Kuna",
+        symbol: "kn",
+        weight: 1,
+        exponent: 2
       },
       HTG: %{
-        nome: "Gourde US Dollar",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Gourde US Dollar",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       HUF: %{
-        nome: "Forint",
-        simbolo: "Ft",
-        peso: 1,
-        expoente: 2
+        name: "Forint",
+        symbol: "Ft",
+        weight: 1,
+        exponent: 2
       },
       IDR: %{
-        nome: "Rupiah",
-        simbolo: "Rp",
-        peso: 1,
-        expoente: 2
+        name: "Rupiah",
+        symbol: "Rp",
+        weight: 1,
+        exponent: 2
       },
       ILS: %{
-        nome: "New Israeli Sheqel",
-        simbolo: "₪",
-        peso: 1,
-        expoente: 2
+        name: "New Israeli Sheqel",
+        symbol: "₪",
+        weight: 1,
+        exponent: 2
       },
       INR: %{
-        nome: "Indian Rupee",
-        simbolo: "₹",
-        peso: 1,
-        expoente: 2
+        name: "Indian Rupee",
+        symbol: "₹",
+        weight: 1,
+        exponent: 2
       },
       IQD: %{
-        nome: "Iraqi Dinar",
-        simbolo: "‎ع.د",
-        peso: 1,
-        expoente: 3
+        name: "Iraqi Dinar",
+        symbol: "‎ع.د",
+        weight: 1,
+        exponent: 3
       },
       IRR: %{
-        nome: "Iranian Rial",
-        simbolo: "﷼",
-        peso: 1,
-        expoente: 2
+        name: "Iranian Rial",
+        symbol: "﷼",
+        weight: 1,
+        exponent: 2
       },
       ISK: %{
-        nome: "Iceland Krona",
-        simbolo: "kr",
-        peso: 1,
-        expoente: 0
+        name: "Iceland Krona",
+        symbol: "kr",
+        weight: 1,
+        exponent: 0
       },
       JMD: %{
-        nome: "Jamaican Dollar",
-        simbolo: "J$",
-        peso: 1,
-        expoente: 2
+        name: "Jamaican Dollar",
+        symbol: "J$",
+        weight: 1,
+        exponent: 2
       },
       JOD: %{
-        nome: "Jordanian Dinar",
-        simbolo: "JOD",
-        peso: 1,
-        expoente: 3
+        name: "Jordanian Dinar",
+        symbol: "JOD",
+        weight: 1,
+        exponent: 3
       },
       JPY: %{
-        nome: "Yen",
-        simbolo: "¥",
-        peso: 1,
-        expoente: 0
+        name: "Yen",
+        symbol: "¥",
+        weight: 1,
+        exponent: 0
       },
       KES: %{
-        nome: "Kenyan Shilling",
-        simbolo: "KSh",
-        peso: 1,
-        expoente: 2
+        name: "Kenyan Shilling",
+        symbol: "KSh",
+        weight: 1,
+        exponent: 2
       },
       KGS: %{
-        nome: "Som",
-        simbolo: "лв",
-        peso: 1,
-        expoente: 2
+        name: "Som",
+        symbol: "лв",
+        weight: 1,
+        exponent: 2
       },
       KHR: %{
-        nome: "Riel",
-        simbolo: "៛",
-        peso: 1,
-        expoente: 2
+        name: "Riel",
+        symbol: "៛",
+        weight: 1,
+        exponent: 2
       },
       KMF: %{
-        nome: "Comoro Franc",
-        simbolo: "CF",
-        peso: 1,
-        expoente: 0
+        name: "Comoro Franc",
+        symbol: "CF",
+        weight: 1,
+        exponent: 0
       },
       KPW: %{
-        nome: "North Korean Won",
-        simbolo: "₩",
-        peso: 1,
-        expoente: 2
+        name: "North Korean Won",
+        symbol: "₩",
+        weight: 1,
+        exponent: 2
       },
       KRW: %{
-        nome: "Won",
-        simbolo: "₩",
-        peso: 1,
-        expoente: 0
+        name: "Won",
+        symbol: "₩",
+        weight: 1,
+        exponent: 0
       },
       KWD: %{
-        nome: "Kuwaiti Dinar",
-        simbolo: "د.ك",
-        peso: 1,
-        expoente: 3
+        name: "Kuwaiti Dinar",
+        symbol: "د.ك",
+        weight: 1,
+        exponent: 3
       },
       KYD: %{
-        nome: "Cayman Islands Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Cayman Islands Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       KZT: %{
-        nome: "Tenge",
-        simbolo: "лв",
-        peso: 1,
-        expoente: 2
+        name: "Tenge",
+        symbol: "лв",
+        weight: 1,
+        exponent: 2
       },
       LAK: %{
-        nome: "Kip",
-        simbolo: "₭",
-        peso: 1,
-        expoente: 2
+        name: "Kip",
+        symbol: "₭",
+        weight: 1,
+        exponent: 2
       },
       LBP: %{
-        nome: "Lebanese Pound",
-        simbolo: "£",
-        peso: 1,
-        expoente: 2
+        name: "Lebanese Pound",
+        symbol: "£",
+        weight: 1,
+        exponent: 2
       },
       LKR: %{
-        nome: "Sri Lanka Rupee",
-        simbolo: "₨",
-        peso: 1,
-        expoente: 2
+        name: "Sri Lanka Rupee",
+        symbol: "₨",
+        weight: 1,
+        exponent: 2
       },
       LRD: %{
-        nome: "Liberian Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Liberian Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       LSL: %{
-        nome: "Rand Loti",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Rand Loti",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       LTL: %{
-        nome: "Lithuanian Litas",
-        simbolo: "Lt",
-        peso: 1,
-        expoente: 2
+        name: "Lithuanian Litas",
+        symbol: "Lt",
+        weight: 1,
+        exponent: 2
       },
       LVL: %{
-        nome: "Latvian Lats",
-        simbolo: "Ls",
-        peso: 1,
-        expoente: 2
+        name: "Latvian Lats",
+        symbol: "Ls",
+        weight: 1,
+        exponent: 2
       },
       LYD: %{
-        nome: "Libyan Dinar",
-        simbolo: "ل.د",
-        peso: 1,
-        expoente: 3
+        name: "Libyan Dinar",
+        symbol: "ل.د",
+        weight: 1,
+        exponent: 3
       },
       MAD: %{
-        nome: "Moroccan Dirham",
-        simbolo: "د.م.",
-        peso: 1,
-        expoente: 2
+        name: "Moroccan Dirham",
+        symbol: "د.م.",
+        weight: 1,
+        exponent: 2
       },
       MDL: %{
-        nome: "Moldovan Leu",
-        simbolo: "MDL",
-        peso: 1,
-        expoente: 2
+        name: "Moldovan Leu",
+        symbol: "MDL",
+        weight: 1,
+        exponent: 2
       },
       MGA: %{
-        nome: "Malagasy Ariary",
-        simbolo: "Ar",
-        peso: 1,
-        expoente: 2
+        name: "Malagasy Ariary",
+        symbol: "Ar",
+        weight: 1,
+        exponent: 2
       },
       MKD: %{
-        nome: "Denar",
-        simbolo: "ден",
-        peso: 1,
-        expoente: 2
+        name: "Denar",
+        symbol: "ден",
+        weight: 1,
+        exponent: 2
       },
       MMK: %{
-        nome: "Kyat",
-        simbolo: "K",
-        peso: 1,
-        expoente: 2
+        name: "Kyat",
+        symbol: "K",
+        weight: 1,
+        exponent: 2
       },
       MNT: %{
-        nome: "Tugrik",
-        simbolo: "₮",
-        peso: 1,
-        expoente: 2
+        name: "Tugrik",
+        symbol: "₮",
+        weight: 1,
+        exponent: 2
       },
       MOP: %{
-        nome: "Pataca",
-        simbolo: "MOP$",
-        peso: 1,
-        expoente: 2
+        name: "Pataca",
+        symbol: "MOP$",
+        weight: 1,
+        exponent: 2
       },
       MRO: %{
-        nome: "Ouguiya",
-        simbolo: "UM",
-        peso: 1,
-        expoente: 2
+        name: "Ouguiya",
+        symbol: "UM",
+        weight: 1,
+        exponent: 2
       },
       MUR: %{
-        nome: "Mauritius Rupee",
-        simbolo: "₨",
-        peso: 1,
-        expoente: 2
+        name: "Mauritius Rupee",
+        symbol: "₨",
+        weight: 1,
+        exponent: 2
       },
       MVR: %{
-        nome: "Rufiyaa",
-        simbolo: "Rf",
-        peso: 1,
-        expoente: 2
+        name: "Rufiyaa",
+        symbol: "Rf",
+        weight: 1,
+        exponent: 2
       },
       MWK: %{
-        nome: "Kwacha",
-        simbolo: "MK",
-        peso: 1,
-        expoente: 2
+        name: "Kwacha",
+        symbol: "MK",
+        weight: 1,
+        exponent: 2
       },
       MXN: %{
-        nome: "Mexican Peso",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Mexican weight",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       MXV: %{
-        nome: "Mexican Peso Mexican Unidad de Inversion (UDI)",
-        simbolo: "UDI",
-        peso: 1,
-        expoente: 2
+        name: "Mexican weight Mexican Unidad de Inversion (UDI)",
+        symbol: "UDI",
+        weight: 1,
+        exponent: 2
       },
       MYR: %{
-        nome: "Malaysian Ringgit",
-        simbolo: "RM",
-        peso: 1,
-        expoente: 2
+        name: "Malaysian Ringgit",
+        symbol: "RM",
+        weight: 1,
+        exponent: 2
       },
       MZN: %{
-        nome: "Metical",
-        simbolo: "MT",
-        peso: 1,
-        expoente: 2
+        name: "Metical",
+        symbol: "MT",
+        weight: 1,
+        exponent: 2
       },
       NAD: %{
-        nome: "Rand Namibia Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Rand Namibia Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       NGN: %{
-        nome: "Naira",
-        simbolo: "₦",
-        peso: 1,
-        expoente: 2
+        name: "Naira",
+        symbol: "₦",
+        weight: 1,
+        exponent: 2
       },
       NIO: %{
-        nome: "Cordoba Oro",
-        simbolo: "C$",
-        peso: 1,
-        expoente: 2
+        name: "Cordoba Oro",
+        symbol: "C$",
+        weight: 1,
+        exponent: 2
       },
       NOK: %{
-        nome: "Norwegian Krone",
-        simbolo: "kr",
-        peso: 1,
-        expoente: 2
+        name: "Norwegian Krone",
+        symbol: "kr",
+        weight: 1,
+        exponent: 2
       },
       NPR: %{
-        nome: "Nepalese Rupee",
-        simbolo: "₨",
-        peso: 1,
-        expoente: 2
+        name: "Nepalese Rupee",
+        symbol: "₨",
+        weight: 1,
+        exponent: 2
       },
       NZD: %{
-        nome: "New Zealand Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "New Zealand Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       OMR: %{
-        nome: "Rial Omani",
-        simbolo: "﷼",
-        peso: 1,
-        expoente: 3
+        name: "Rial Omani",
+        symbol: "﷼",
+        weight: 1,
+        exponent: 3
       },
       PAB: %{
-        nome: "Balboa US Dollar",
-        simbolo: "B/.",
-        peso: 1,
-        expoente: 2
+        name: "Balboa US Dollar",
+        symbol: "B/.",
+        weight: 1,
+        exponent: 2
       },
       PEN: %{
-        nome: "Nuevo Sol",
-        simbolo: "S/.",
-        peso: 1,
-        expoente: 2
+        name: "Nuevo Sol",
+        symbol: "S/.",
+        weight: 1,
+        exponent: 2
       },
       PGK: %{
-        nome: "Kina",
-        simbolo: "K",
-        peso: 1,
-        expoente: 2
+        name: "Kina",
+        symbol: "K",
+        weight: 1,
+        exponent: 2
       },
       PHP: %{
-        nome: "Philippine Peso",
-        simbolo: "Php",
-        peso: 1,
-        expoente: 2
+        name: "Philippine weight",
+        symbol: "Php",
+        weight: 1,
+        exponent: 2
       },
       PKR: %{
-        nome: "Pakistan Rupee",
-        simbolo: "₨",
-        peso: 1,
-        expoente: 2
+        name: "Pakistan Rupee",
+        symbol: "₨",
+        weight: 1,
+        exponent: 2
       },
       PLN: %{
-        nome: "Zloty",
-        simbolo: "zł",
-        peso: 1,
-        expoente: 2
+        name: "Zloty",
+        symbol: "zł",
+        weight: 1,
+        exponent: 2
       },
       PYG: %{
-        nome: "Guarani",
-        simbolo: "Gs",
-        peso: 1,
-        expoente: 0
+        name: "Guarani",
+        symbol: "Gs",
+        weight: 1,
+        exponent: 0
       },
       QAR: %{
-        nome: "Qatari Rial",
-        simbolo: "﷼",
-        peso: 1,
-        expoente: 2
+        name: "Qatari Rial",
+        symbol: "﷼",
+        weight: 1,
+        exponent: 2
       },
       RON: %{
-        nome: "New Leu",
-        simbolo: "lei",
-        peso: 1,
-        expoente: 2
+        name: "New Leu",
+        symbol: "lei",
+        weight: 1,
+        exponent: 2
       },
       RSD: %{
-        nome: "Serbian Dinar",
-        simbolo: "Дин.",
-        peso: 1,
-        expoente: 2
+        name: "Serbian Dinar",
+        symbol: "Дин.",
+        weight: 1,
+        exponent: 2
       },
       RUB: %{
-        nome: "Russian Ruble",
-        simbolo: "₽",
-        peso: 1,
-        expoente: 2
+        name: "Russian Ruble",
+        symbol: "₽",
+        weight: 1,
+        exponent: 2
       },
       RWF: %{
-        nome: "Rwanda Franc",
-        simbolo: " ",
-        peso: 1,
-        expoente: 0
+        name: "Rwanda Franc",
+        symbol: " ",
+        weight: 1,
+        exponent: 0
       },
       SAR: %{
-        nome: "Saudi Riyal",
-        simbolo: "﷼",
-        peso: 1,
-        expoente: 2
+        name: "Saudi Riyal",
+        symbol: "﷼",
+        weight: 1,
+        exponent: 2
       },
       SBD: %{
-        nome: "Solomon Islands Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Solomon Islands Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       SCR: %{
-        nome: "Seychelles Rupee",
-        simbolo: "₨",
-        peso: 1,
-        expoente: 2
+        name: "Seychelles Rupee",
+        symbol: "₨",
+        weight: 1,
+        exponent: 2
       },
       SDG: %{
-        nome: "Sudanese Pound",
-        simbolo: "SDG",
-        peso: 1,
-        expoente: 2
+        name: "Sudanese Pound",
+        symbol: "SDG",
+        weight: 1,
+        exponent: 2
       },
       SEK: %{
-        nome: "Swedish Krona",
-        simbolo: "kr",
-        peso: 1,
-        expoente: 2
+        name: "Swedish Krona",
+        symbol: "kr",
+        weight: 1,
+        exponent: 2
       },
       SGD: %{
-        nome: "Singapore Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Singapore Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       SHP: %{
-        nome: "Saint Helena Pound",
-        simbolo: "£",
-        peso: 1,
-        expoente: 2
+        name: "Saint Helena Pound",
+        symbol: "£",
+        weight: 1,
+        exponent: 2
       },
       SLL: %{
-        nome: "Leone",
-        simbolo: "Le",
-        peso: 1,
-        expoente: 2
+        name: "Leone",
+        symbol: "Le",
+        weight: 1,
+        exponent: 2
       },
       SOS: %{
-        nome: "Somali Shilling",
-        simbolo: "S",
-        peso: 1,
-        expoente: 2
+        name: "Somali Shilling",
+        symbol: "S",
+        weight: 1,
+        exponent: 2
       },
       SRD: %{
-        nome: "Surinam Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Surinam Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       STD: %{
-        nome: "Dobra",
-        simbolo: "Db",
-        peso: 1,
-        expoente: 2
+        name: "Dobra",
+        symbol: "Db",
+        weight: 1,
+        exponent: 2
       },
       SVC: %{
-        nome: "El Salvador Colon US Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "El Salvador Colon US Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       SYP: %{
-        nome: "Syrian Pound",
-        simbolo: "£",
-        peso: 1,
-        expoente: 2
+        name: "Syrian Pound",
+        symbol: "£",
+        weight: 1,
+        exponent: 2
       },
       SZL: %{
-        nome: "Lilangeni",
-        simbolo: "E",
-        peso: 1,
-        expoente: 2
+        name: "Lilangeni",
+        symbol: "E",
+        weight: 1,
+        exponent: 2
       },
       THB: %{
-        nome: "Baht",
-        simbolo: "฿",
-        peso: 1,
-        expoente: 2
+        name: "Baht",
+        symbol: "฿",
+        weight: 1,
+        exponent: 2
       },
       TJS: %{
-        nome: "Somoni",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Somoni",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       TMT: %{
-        nome: "Manat",
-        simbolo: "₼",
-        peso: 1,
-        expoente: 2
+        name: "Manat",
+        symbol: "₼",
+        weight: 1,
+        exponent: 2
       },
       TND: %{
-        nome: "Tunisian Dinar",
-        simbolo: "د.ت",
-        peso: 1,
-        expoente: 2
+        name: "Tunisian Dinar",
+        symbol: "د.ت",
+        weight: 1,
+        exponent: 2
       },
       TOP: %{
-        nome: "Pa'anga",
-        simbolo: "T$",
-        peso: 1,
-        expoente: 2
+        name: "Pa'anga",
+        symbol: "T$",
+        weight: 1,
+        exponent: 2
       },
       TRY: %{
-        nome: "Turkish Lira",
-        simbolo: "TL",
-        peso: 1,
-        expoente: 2
+        name: "Turkish Lira",
+        symbol: "TL",
+        weight: 1,
+        exponent: 2
       },
       TTD: %{
-        nome: "Trinidad and Tobago Dollar",
-        simbolo: "TT$",
-        peso: 1,
-        expoente: 2
+        name: "Trinidad and Tobago Dollar",
+        symbol: "TT$",
+        weight: 1,
+        exponent: 2
       },
       TWD: %{
-        nome: "New Taiwan Dollar",
-        simbolo: "NT$",
-        peso: 1,
-        expoente: 2
+        name: "New Taiwan Dollar",
+        symbol: "NT$",
+        weight: 1,
+        exponent: 2
       },
       TZS: %{
-        nome: "Tanzanian Shilling",
-        simbolo: "Tsh",
-        peso: 1,
-        expoente: 2
+        name: "Tanzanian Shilling",
+        symbol: "Tsh",
+        weight: 1,
+        exponent: 2
       },
       UAH: %{
-        nome: "Hryvnia",
-        simbolo: "₴",
-        peso: 1,
-        expoente: 2
+        name: "Hryvnia",
+        symbol: "₴",
+        weight: 1,
+        exponent: 2
       },
       UGX: %{
-        nome: "Uganda Shilling",
-        simbolo: "Ush",
-        peso: 1,
-        expoente: 0
+        name: "Uganda Shilling",
+        symbol: "Ush",
+        weight: 1,
+        exponent: 0
       },
       USD: %{
-        nome: "US Dollar",
-        simbolo: "$",
-        peso: 10,
-        expoente: 2
+        name: "US Dollar",
+        symbol: "$",
+        weight: 10,
+        exponent: 2
       },
       UYI: %{
-        nome: "Peso Uruguayo Uruguay Peso en Unidades Indexadas",
-        simbolo: "$U",
-        peso: 1,
-        expoente: 0
+        name: "weight Uruguayo Uruguay weight en Unidades Indexadas",
+        symbol: "$U",
+        weight: 1,
+        exponent: 0
       },
       UYU: %{
-        nome: "Peso Uruguayo Uruguay Peso en Unidades Indexadas",
-        simbolo: "$U",
-        peso: 1,
-        expoente: 2
+        name: "weight Uruguayo Uruguay weight en Unidades Indexadas",
+        symbol: "$U",
+        weight: 1,
+        exponent: 2
       },
       UZS: %{
-        nome: "Uzbekistan Sum",
-        simbolo: "лв",
-        peso: 1,
-        expoente: 2
+        name: "Uzbekistan Sum",
+        symbol: "лв",
+        weight: 1,
+        exponent: 2
       },
       VEF: %{
-        nome: "Bolivar Fuerte",
-        simbolo: "Bs",
-        peso: 1,
-        expoente: 2
+        name: "Bolivar Fuerte",
+        symbol: "Bs",
+        weight: 1,
+        exponent: 2
       },
       VND: %{
-        nome: "Dong",
-        simbolo: "₫",
-        peso: 1,
-        expoente: 0
+        name: "Dong",
+        symbol: "₫",
+        weight: 1,
+        exponent: 0
       },
       VUV: %{
-        nome: "Vatu",
-        simbolo: "VT",
-        peso: 1,
-        expoente: 0
+        name: "Vatu",
+        symbol: "VT",
+        weight: 1,
+        exponent: 0
       },
       WST: %{
-        nome: "Tala",
-        simbolo: "WS$",
-        peso: 1,
-        expoente: 2
+        name: "Tala",
+        symbol: "WS$",
+        weight: 1,
+        exponent: 2
       },
       XAF: %{
-        nome: "CFA Franc BEAC",
-        simbolo: "FCFA",
-        peso: 1,
-        expoente: 0
+        name: "CFA Franc BEAC",
+        symbol: "FCFA",
+        weight: 1,
+        exponent: 0
       },
       XAG: %{
-        nome: "Silver",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Silver",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XAU: %{
-        nome: "Gold",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Gold",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XBA: %{
-        nome: "Bond Markets Units European Composite Unit (EURCO)",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Bond Markets Units European Composite Unit (EURCO)",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XBB: %{
-        nome: "European Monetary Unit (E.M.U.-6)",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "European Monetary Unit (E.M.U.-6)",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XBC: %{
-        nome: "European Unit of Account 9(E.U.A.-9)",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "European Unit of Account 9(E.U.A.-9)",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XBD: %{
-        nome: "European Unit of Account 17(E.U.A.-17)",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "European Unit of Account 17(E.U.A.-17)",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XCD: %{
-        nome: "East Caribbean Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "East Caribbean Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       },
       XDR: %{
-        nome: "SDR",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "SDR",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XFU: %{
-        nome: "UIC-Franc",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "UIC-Franc",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XOF: %{
-        nome: "CFA Franc BCEAO",
-        simbolo: " ",
-        peso: 1,
-        expoente: 0
+        name: "CFA Franc BCEAO",
+        symbol: " ",
+        weight: 1,
+        exponent: 0
       },
       XPD: %{
-        nome: "Palladium",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Palladium",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XPF: %{
-        nome: "CFP Franc",
-        simbolo: " ",
-        peso: 1,
-        expoente: 0
+        name: "CFP Franc",
+        symbol: " ",
+        weight: 1,
+        exponent: 0
       },
       XPT: %{
-        nome: "Platinum",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Platinum",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       XTS: %{
-        nome: "Codes specifically reserved for testing purposes",
-        simbolo: " ",
-        peso: 1,
-        expoente: 2
+        name: "Codes specifically reserved for testing purposes",
+        symbol: " ",
+        weight: 1,
+        exponent: 2
       },
       YER: %{
-        nome: "Yemeni Rial",
-        simbolo: "﷼",
-        peso: 1,
-        expoente: 2
+        name: "Yemeni Rial",
+        symbol: "﷼",
+        weight: 1,
+        exponent: 2
       },
       ZAR: %{
-        nome: "Rand",
-        simbolo: "R",
-        peso: 1,
-        expoente: 2
+        name: "Rand",
+        symbol: "R",
+        weight: 1,
+        exponent: 2
       },
       ZMK: %{
-        nome: "Zambian Kwacha",
-        simbolo: "ZK",
-        peso: 1,
-        expoente: 2
+        name: "Zambian Kwacha",
+        symbol: "ZK",
+        weight: 1,
+        exponent: 2
       },
       ZWL: %{
-        nome: "Zimbabwe Dollar",
-        simbolo: "$",
-        peso: 1,
-        expoente: 2
+        name: "Zimbabwe Dollar",
+        symbol: "$",
+        weight: 1,
+        exponent: 2
       }
     ]
   end
@@ -1092,7 +1092,7 @@ defmodule AccountSimulator.CLI.Currency do
       BND: 0,
       BOB: 0,
       BOV: 0,
-      BRL: 0,
+      BRL: 10,
       BSD: 0,
       BTN: 0,
       BWP: 0,
