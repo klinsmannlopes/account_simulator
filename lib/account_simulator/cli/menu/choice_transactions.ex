@@ -68,10 +68,5 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
     Shell.info("Você escolheu... [#{chosen_menu_item.label}]")
 
     chosen_menu_item
-
-    #case Shell.yes?("Confirma a ação?") do
-    #  true -> chosen_menu_item
-    #  false -> option_transactions(usuarios, usuario)
-    #end
   end
 end
