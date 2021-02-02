@@ -5,6 +5,7 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
   alias AccountSimulator.Mix.CLI.Trasactions.AccountTransactions
   alias AccountSimulator.Mix.Tasks.Utils.PromptHelper
   alias AccountSimulator.CLI.Menu.ChoiceTransactions
+  alias AccountSimulator.Mix.CLI.Trasactions.AccountExchange
 
   # Realiza a ação do menu de login.
   def perfom_login(chosen_menu_item) do
@@ -20,7 +21,7 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
       %Menu{id: :balance, label: _} -> balance(users, user)
       %Menu{id: :deposit, label: _} -> deposit(users, user)
       %Menu{id: :transfer, label: _} -> transfer(users, user)
-      %Menu{id: :exchange, label: _} -> Shell.info("Câmbio de moedas...")
+      %Menu{id: :exchange, label: _} -> exchange(users, user)
     end
   end
 
@@ -45,6 +46,11 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
 
   defp transfer(users, user) do
     AccountTransactions.transfer(users, user)
+    |> ChoiceTransactions.option_transactions(user)
+  end
+
+  defp exchange(users, user) do
+    AccountExchange.currency_change(users, user)
     |> ChoiceTransactions.option_transactions(user)
   end
 end
