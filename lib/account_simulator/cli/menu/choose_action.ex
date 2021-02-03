@@ -27,10 +27,12 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     end
   end
 
+   # Ação de login.
   defp login_user do
     Login.login()
   end
 
+   # Ação de criar conta.
   defp create_user() do
     Account.create()
   end
@@ -44,6 +46,7 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     ChoiceTransactions.option_transactions(users, user)
   end
 
+  # Imprime no console o saldo do cliente em na moeda que o mesmo passou via console.
   defp balance_currency(users, user) do
     Shell.cmd("clear")
     AccountTransactions.balance_currency(user, users)
@@ -57,11 +60,13 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     |> ChoiceTransactions.option_transactions(user)
   end
 
+  # Transação de transferência.
   defp transfer(users, user) do
     AccountTransactions.transfer(users, user)
     |> ChoiceTransactions.option_transactions(user)
   end
 
+  # Transação de cambio de moedas.
   defp exchange(users, user) do
     AccountExchange.currency_change(users, user)
     |> ChoiceTransactions.option_transactions(user)
