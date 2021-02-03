@@ -68,6 +68,17 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     |> check_currency(user, users)
   end
 
+  # Saldo por moeda.
+  def balance_currency(user, users) do
+    print_balance_currency(users, user, currency(user, users))
+  end
+
+  # Retorna saldo da conta por moeda passada pelo usuário.
+  defp print_balance_currency(users, user, currency) do
+    balance_currency = currency_balance(users, user, currency)
+    Shell.info("Seu saldo na moeda #{currency} é: #{balance_currency}" )
+  end
+
   # Pegar a moeda digitada pela usuário quando for a ação de realizar câmbio.
   def currency_exchange(user, users) do
     PromptHelper.prompt_message("Qual seria a moeda?: ")
