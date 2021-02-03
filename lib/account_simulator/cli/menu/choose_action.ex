@@ -20,6 +20,7 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
   def perfom_transactions(chosen_menu_item, user, users) do
     case chosen_menu_item do
       %Menu{id: :balance, label: _} -> balance(users, user)
+      %Menu{id: :balance_currency, label: _} -> balance_currency(users, user)
       %Menu{id: :deposit, label: _} -> deposit(users, user)
       %Menu{id: :transfer, label: _} -> transfer(users, user)
       %Menu{id: :exchange, label: _} -> exchange(users, user)
@@ -39,6 +40,13 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     Shell.cmd("clear")
     Shell.info("Esse e seu saldo nas seguintes moedas abaixo")
     AccountTransactions.get_balance(user, users)
+    PromptHelper.prompt_message("Pressione ENTER para voltar ao menu da conta...")
+    ChoiceTransactions.option_transactions(users, user)
+  end
+
+  defp balance_currency(users, user) do
+    Shell.cmd("clear")
+    AccountTransactions.balance_currency(user, users)
     PromptHelper.prompt_message("Pressione ENTER para voltar ao menu da conta...")
     ChoiceTransactions.option_transactions(users, user)
   end
