@@ -1,7 +1,6 @@
 defmodule AccountSimulator.CLI.Main do
-  
   # Início do sistema.
-  
+
   alias Mix.Shell.IO, as: Shell
 
   def start_app do

@@ -22,8 +22,8 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   # Faz toda ação para realizar o depósito.
   def value_deposit(user, users, currency, value) do
     Shell.cmd("clear")
-    
-    new_data_users = put_in (users[user])[currency], (users[user])[currency] + value
+
+    new_data_users = put_in(users[user][currency], users[user][currency] + value)
 
     total = currency_balance(new_data_users, user, currency)
     Shell.info("Seu saldo atual é de #{total} #{currency}")
@@ -56,13 +56,16 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
         Shell.info("Digite apenas números positivos.")
         Shell.prompt("Pressione Enter para tentar novamente.")
         value()
-      _ -> String.to_integer(value)
+
+      _ ->
+        String.to_integer(value)
     end
   end
 
   # Pegar a moeda digitada pela usuário.
   def currency(user, users) do
     Shell.cmd("clear")
+
     PromptHelper.prompt_message("Qual seria a moeda?: ")
     |> PromptHelper.string_atom_upcase()
     |> check_currency(user, users)
@@ -76,7 +79,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   # Retorna saldo da conta por moeda passada pelo usuário.
   defp print_balance_currency(users, user, currency) do
     balance_currency = currency_balance(users, user, currency)
-    Shell.info("Seu saldo na moeda #{currency} é: #{balance_currency}" )
+    Shell.info("Seu saldo na moeda #{currency} é: #{balance_currency}")
   end
 
   # Pegar a moeda digitada pela usuário quando for a ação de realizar câmbio.
@@ -93,6 +96,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
         Shell.info("Digite uma sigla válida, de acordo com a ISO 4217, ex: USD, BRL ...")
         Shell.prompt("Pressione Enter para tentar novamente.")
         currency(user, users)
+
       _ ->
         currency
     end
@@ -113,13 +117,18 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   def perform_transfer(value, users, user, currency, referred_account) do
     check_value(currency, users, user, value)
     users = AccountExchange.remove_currency(users, user, currency, value)
+
     [value, users] =
       if referred_account != :bank_lopes do
         apportionment(users, currency, value)
       else
         [value, users]
       end
-    Shell.info("Transferência de valor R$ #{value} #{currency} para a conta #{referred_account}, realizada com sucesso")
+
+    Shell.info(
+      "Transferência de valor R$ #{value} #{currency} para a conta #{referred_account}, realizada com sucesso"
+    )
+
     AccountExchange.add_currency(users, referred_account, currency, value)
   end
 
@@ -127,7 +136,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   def apportionment(users, currency, value) do
     rate = 5
     split = round(value / rate)
-    users = put_in (users[:bank_lopes])[currency], (users[:bank_lopes])[currency] + split
+    users = put_in(users[:bank_lopes][currency], users[:bank_lopes][currency] + split)
     Shell.info("Taxa de rateio para o banco lopes e de #{rate}%")
     [value - split, users]
   end
@@ -148,6 +157,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
       Shell.prompt("Pressione Enter para voltar ao menu de transações.")
       ChoiceTransactions.option_transactions(users, user)
     end
+
     value
   end
 
@@ -168,33 +178,35 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
       Shell.prompt("Pressione Enter para tentar novamente.")
       transfer(users, user)
     end
+
     account_exists(account_user, user, users)
   end
 
   # Verifica se conta passada pelo usuário existe na estrutura.
   defp account_exists(account_user, user, users) do
-    case AccountConsult.get_user?(account_user,users) do
-        :error ->
-          Shell.cmd("clear")
-          Shell.error("Essa conta não existe!")
-          Shell.prompt("Pressione Enter para tentar novamente.")
-          transfer(users, user)
-        _ ->
-          account_user
-       end
+    case AccountConsult.get_user?(account_user, users) do
+      :error ->
+        Shell.cmd("clear")
+        Shell.error("Essa conta não existe!")
+        Shell.prompt("Pressione Enter para tentar novamente.")
+        transfer(users, user)
+
+      _ ->
+        account_user
+    end
   end
 
   # Verifica se o usuário possui algum dinheiro em sua conta.
   def verify_money?(users, user) do
-    
     PromptHelper.som_total_values(Keyword.values(users[user]))
     |> case do
-         :error ->
-           Shell.info("Você não possui dinheiro, faça um deposito antes de continuar")
-           Shell.prompt("Pressione Enter para voltar ao menu de transações.")
-           ChoiceTransactions.option_transactions(users, user)
-         nil ->
-           true
-       end
+      :error ->
+        Shell.info("Você não possui dinheiro, faça um deposito antes de continuar")
+        Shell.prompt("Pressione Enter para voltar ao menu de transações.")
+        ChoiceTransactions.option_transactions(users, user)
+
+      nil ->
+        true
+    end
   end
 end

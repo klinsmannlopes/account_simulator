@@ -6,7 +6,7 @@ defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
   # Apresenta menu da conta.
   def option_transactions(usuarios, usuario) do
     Shell.cmd("clear")
-    
+
     Shell.info("Escolha uma opcao:\n")
 
     menu_itens = ItensTransations.all()

@@ -6,13 +6,13 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountExchange do
 
   # Removendo dinheiro de uma moeda específica.
   def remove_currency(users, user, currency, value) do
-    put_in (users[user])[currency], (users[user])[currency] - value
+    put_in(users[user][currency], users[user][currency] - value)
   end
 
   # Adicionando dinheiro de uma moeda específica.
   def add_currency(users, user, currency, value) do
     Exception.amount?(value)
-    put_in (users[user])[currency], (users[user])[currency] + value
+    put_in(users[user][currency], users[user][currency] + value)
   end
 
   # Fluxo para relializar o câmbio das moedas. 
@@ -23,10 +23,15 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountExchange do
     AccountTransactions.check_value(currency_input, users, user, value)
     currency_output = AccountTransactions.currency_exchange(user, users)
     print_currency(currency_output, "second")
+
     if check_currency_exchange?(currency_input, currency_output) == :error do
-      Shell.prompt("Não é possível realizar câmbio para a mesma moeda. Digite as moedas novamente, aperte ENTER para continuar.")
+      Shell.prompt(
+        "Não é possível realizar câmbio para a mesma moeda. Digite as moedas novamente, aperte ENTER para continuar."
+      )
+
       currency_change(users, user)
     end
+
     new_data_users = currency_exchange(users, user, currency_input, currency_output, value)
     Shell.cmd("clear")
     Shell.info("Foi realizado o câmbio entre as moedas #{currency_input} => #{currency_output}")
@@ -37,7 +42,13 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountExchange do
   def currency_exchange(users, user, currency_input, currency_output, value) do
     weight_input = get_weight(currency_input)
     weight_output = get_weight(currency_output)
-    add_currency(remove_currency(users, user, currency_input, value), user, currency_output, calculation_exchange(rate(weight_input, weight_output), value))
+
+    add_currency(
+      remove_currency(users, user, currency_input, value),
+      user,
+      currency_output,
+      calculation_exchange(rate(weight_input, weight_output), value)
+    )
   end
 
   # Verifica saldo e pega moeda digitada.
@@ -71,7 +82,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountExchange do
 
   # Divide os pesos das moedas.
   def rate(weight_input, weight_output) do
-    weight_input / weight_output 
+    weight_input / weight_output
   end
 
   # Calcula o valor a ser depositado.

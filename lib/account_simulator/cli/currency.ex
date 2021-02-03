@@ -1,14 +1,13 @@
 # Este módulo possui listas com informações sobre as moedas.
 
 defmodule AccountSimulator.CLI.Currency do
-  
   # Lista as informações das moedas, de acordo com o compliance ISO 4217.
   def info do
     [
       AED: %{
-        name: "UAE Dirham",                                             
-        symbol: "د.إ", 
-        weight: 2, 
+        name: "UAE Dirham",
+        symbol: "د.إ",
+        weight: 2,
         exponent: 2
       },
       AFN: %{

@@ -56,7 +56,12 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
 
   # Deposita na conta do cliente em sua moeda específica.
   defp deposit(users, user) do
-    AccountTransactions.value_deposit(user, users, AccountTransactions.currency(user, users) , AccountTransactions.value())
+    AccountTransactions.value_deposit(
+      user,
+      users,
+      AccountTransactions.currency(user, users),
+      AccountTransactions.value()
+    )
     |> ChoiceTransactions.option_transactions(user)
   end
 

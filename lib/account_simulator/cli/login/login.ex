@@ -1,5 +1,4 @@
 defmodule AccountSimulator.CLI.Login.Login do
-  
   # Início do sistema.
   # Através desse módulo o usuário escolhe quais operações fazer.
   alias Mix.Shell.IO, as: Shell
@@ -23,6 +22,7 @@ defmodule AccountSimulator.CLI.Login.Login do
         Shell.error("Usuário não existe!")
         Shell.prompt("Pressione ENTER para voltar a tela de login...")
         AccountSimulator.CLI.Menu.ChoiceLogin.start()
+
       _ ->
         ChoiceTransactions.option_transactions(users, user)
     end
