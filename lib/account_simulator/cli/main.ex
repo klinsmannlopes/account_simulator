@@ -1,14 +1,13 @@
 defmodule AccountSimulator.CLI.Main do
-  @moduledoc """
-  Início do sistema.
-  """
+  # Início do sistema.
+
   alias Mix.Shell.IO, as: Shell
 
   def start_app do
     Shell.cmd("clear")
     welcome_message()
     Shell.prompt("Pressione ENTER para continuar...")
-    ##Mostrar o menu de login
+    # Mostrar o menu de login.
     start_menu_choice()
   end
 
@@ -19,6 +18,6 @@ defmodule AccountSimulator.CLI.Main do
   end
 
   defp start_menu_choice do
-    AccountSimulator.CLI.Menu.Choice.start()
+    AccountSimulator.CLI.Menu.ChoiceLogin.start()
   end
 end

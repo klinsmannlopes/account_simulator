@@ -1,13 +1,15 @@
-defmodule AccountSimulator.CLI.Menu.Choice do
+defmodule AccountSimulator.CLI.Menu.ChoiceTransactions do
   alias Mix.Shell.IO, as: Shell
-  alias AccountSimulator.CLI.Menu.ItensLogin
-  alias AccountSimulator.Mix.CLI.Login.ChoiceLogin
+  alias AccountSimulator.CLI.Menu.ItensTransations
+  alias AccountSimulator.Mix.CLI.Menu.ChooseAction
 
-  def start() do
+  # Apresenta menu da conta.
+  def option_transactions(usuarios, usuario) do
     Shell.cmd("clear")
-    Shell.info("Escolha uma opcao:")
 
-    menu_itens = ItensLogin.all()
+    Shell.info("Escolha uma opcao:\n")
+
+    menu_itens = ItensTransations.all()
     find_menu_itens_by_index = &Enum.at(menu_itens, &1, :error)
 
     menu_itens
@@ -15,13 +17,14 @@ defmodule AccountSimulator.CLI.Menu.Choice do
     |> dysplay_options()
     |> generate_question
     |> Shell.prompt()
-    |> parse_answer()
+    |> parse_answer(usuario, usuarios)
     |> find_menu_itens_by_index.()
-    |> confirm_menu_item()
+    |> confirm_menu_item(usuario, usuarios)
     |> confirm_message()
-    |> ChoiceLogin.perfom_login()
+    |> ChooseAction.perfom_transactions(usuario, usuarios)
   end
 
+  # Mostra as opções no console.
   defp dysplay_options(options) do
     options
     |> Enum.with_index(1)
@@ -32,28 +35,30 @@ defmodule AccountSimulator.CLI.Menu.Choice do
     options
   end
 
+  # Analisar a resposta e retira -1 do indice.
   defp generate_question(options) do
     options = Enum.join(1..Enum.count(options), ",")
     "Qual das opções acima você escolhe? [#{options}]\n"
   end
 
-  defp parse_answer(answer) do
+  # Faz o parse para inteiro.
+  defp parse_answer(answer, usuario, usuarios) do
     case Integer.parse(answer) do
-      :error -> invalid_option()
+      :error -> invalid_option(usuario, usuarios)
       {option, _} -> option - 1
     end
   end
 
-  defp invalid_option do
+  defp invalid_option(usuario, usuarios) do
     Shell.cmd("clear")
     Shell.error("Opção Inválida!")
     Shell.prompt("Pressione Enter para tentar novamente.")
-    start()
+    option_transactions(usuarios, usuario)
   end
 
-  defp confirm_menu_item(chosen_menu_item) do
+  defp confirm_menu_item(chosen_menu_item, usuario, usuarios) do
     case chosen_menu_item do
-      :error -> invalid_option()
+      :error -> invalid_option(usuario, usuarios)
       _ -> chosen_menu_item
     end
   end
@@ -62,9 +67,6 @@ defmodule AccountSimulator.CLI.Menu.Choice do
     Shell.cmd("clear")
     Shell.info("Você escolheu... [#{chosen_menu_item.label}]")
 
-    case Shell.yes?("Confirma a ação?") do
-      true -> chosen_menu_item
-      false -> start()
-    end
+    chosen_menu_item
   end
 end

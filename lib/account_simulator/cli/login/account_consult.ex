@@ -1,10 +1,6 @@
 defmodule AccountSimulator.CLI.Login.AccountConsult do
-  
-  def get_balance(usuario, usuarios) do
-    IO.puts usuarios[usuario] |> Enum.map_join("\n", fn {k, v} -> "#{k}:#{v}" end)
-  end
-
+  # É feita uma verificação na estrutura de dados para confirmar se o usuário existe.
   def get_user?(usuario, usuarios) do
-    Keyword.fetch(usuarios, usuario) 
+    Keyword.fetch(usuarios, usuario)
   end
 end
