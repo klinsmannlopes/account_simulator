@@ -27,12 +27,12 @@ defmodule AccountSimulator.Mix.CLI.Menu.ChooseAction do
     end
   end
 
-   # Ação de login.
+  # Ação de login.
   defp login_user do
     Login.login()
   end
 
-   # Ação de criar conta.
+  # Ação de criar conta.
   defp create_user() do
     Account.create()
   end
