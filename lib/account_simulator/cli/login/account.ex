@@ -50,6 +50,6 @@ defmodule AccountSimulator.CLI.Login.Account do
   end
 
   def standard_user do
-    [francisca: Currency.new(), stone: Currency.new(), klinsmann: Currency.new(), lopes: Currency.new(), paula: Currency.new()]
+    [francisca: Currency.new(), bank_lopes: Currency.new(), klinsmann: Currency.new(), lopes: Currency.new(), paula: Currency.new()]
   end
 end

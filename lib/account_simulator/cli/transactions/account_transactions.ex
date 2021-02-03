@@ -103,7 +103,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
     check_value(currency, users, user, value)
     users = AccountExchange.remove_currency(users, user, currency, value)
     [value, users] =
-      if referred_account != :lopes do
+      if referred_account != :bank_lopes do
         apportionment(users, currency, value)
       else
         [value, users]
@@ -116,7 +116,7 @@ defmodule AccountSimulator.Mix.CLI.Trasactions.AccountTransactions do
   def apportionment(users, currency, value) do
     rate = 5
     split = round(value / rate)
-    users = put_in (users[:lopes])[currency], (users[:lopes])[currency] + split
+    users = put_in (users[:bank_lopes])[currency], (users[:bank_lopes])[currency] + split
     Shell.info("Taxa de rateio para o banco lopes e de #{rate}%")
     [value - split, users]
   end
